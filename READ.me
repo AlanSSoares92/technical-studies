@@ -1,0 +1,83 @@
+A classe abstrata só tem a responsabilidade de ser um modelo, ela não pode ser
+implementada e nem virar objeto. Ela pode ter nome, metodo e construtores ( public abstract class {} )
+
+método abstract (public void abstract acao(); )não precisa implementar, qm vai ter a responsabilidade de fazer a implementação do método, vai ser quem herdar as características e os métodos da classe abstrata,
+
+super() é usado para usar construtor da classe herdada
+
+Em Java, um objeto é uma instância concreta de uma classe, representando uma entidade que possui atributos (dados ou características) e métodos (ações ou comportamentos).
+
+O desacoplamento de classe em Java é um princípio de design de software que visa reduzir ao mínimo o grau de interdependência direta entre classes. O objetivo é fazer com que as classes sejam o mais independentes possível, de modo que uma mudança em uma classe tenha impacto mínimo ou nenhum sobre as outras. No entanto, é importante dosar o nível de desacoplamento, pois desacoplar em excesso pode introduzir complexidade adicional.
+
+Polimorfismo em Java é a capacidade de um objeto assumir múltiplas formas, permitindo que uma única interface seja usada para lidar com diferentes tipos de objetos
+
+Herança em Java é um mecanismo fundamental da Programação Orientada a Objetos (POO) que permite que uma nova classe (subclasse) herde atributos e métodos de uma classe existente (superclasse).
+
+Spring Data? Como foi sua experiência e o que mais utilizou dentro desse módulo (ex: JPA Repository, Query Methods, etc.)?
+Sim, faziamos uso, posso até mencionar um dos ultimos projetos solo que fiz, sobre atualização de rating historico,
+que basicamente é um serviço spring (arsenal), que recebe os dados que vem do dmps (plataforma FICO),
+esses dados são recebidos pelo repository e salvos no cosmosDB na azure, pra isso usei as Querys, (não tinha tanto conhecimento, mas fui atras e deu tudo certo rs)
+
+
+Representação de Relacionamentos
+A força do JPA/Hibernate reside no mapeamento dos relacionamentos complexos entre tabelas relacionais para referências e coleções de objetos em Java. Isso é feito usando anotações específicas para cada tipo de cardinalidade (One-to-One, One-to-Many, Many-to-One, Many-to-Many)
+
+Mapeamento Básico de Entidades
+Para mapear uma classe Java para uma tabela de banco de dados, usam-se as seguintes anotações básicas:
+@Entity: Marca a classe Java como uma entidade JPA, indicando que ela deve ser persistida no banco de dados.
+@Table: (Opcional) Especifica o nome da tabela no banco de dados, caso seja diferente do nome da classe.
+@Id: Designa o atributo que serve como chave primária da entidade.
+@GeneratedValue: (Opcional) Especifica como o valor da chave primária será gerado (ex: GenerationType.IDENTITY, GenerationType.SEQUENCE).
+@Column: (Opcional) Especifica detalhes da coluna, como nome (se diferente do atributo), tamanho, se é nula, etc.
+
+Resumo
+O mapeamento com JPA/Hibernate é uma forma declarativa, baseada em anotações, de conectar o mundo orientado a objetos com o mundo relacional. Ele abstrai grande parte do trabalho manual com SQL, permitindo que o desenvolvedor se concentre na lógica de negócios. O uso de mappedBy e JoinColumn/JoinTable gerencia a propriedade do relacionamento e a estrutura física do banco de dados de forma transparente
+
+Poo – é um jeito de programar que usa “objetos” como se fossem
+peças de quebra cabeça, para juntar a informação e o que fazer com ela,
+deixando o codigo mais facil de entender e organizar
+
+Classes aninhadas – Tem acesso direto a todos os membros da classe externa, inclusive membros privados, porque
+uma instancia da classe interna sempre existe dentro do contexto de uma instancia
+da classe externa.
+
+Desgin patterns - “Design Pattern é um modelo para resolver problemas comuns de design no código.”
+MVC, Repository, Service Layer, DTO e Exception Handler.
+
+Singleton -“Design Pattern é um modelo para resolver problemas comuns de design no código.”
+    • O que é: Garante que uma classe tenha apenas uma instância (BD por ex) e fornece um ponto de acesso global a ela.
+      DAO
+    • Hoje utilizamos a repository
+Decorator e Adapter
+
+Encapsulamento : “Encapsulamento significa isolar os detalhes internos de uma classe e controlar como seus dados são acessados.
+Isso evita que outras partes do código manipulem o objeto diretamente, mantendo consistência e integridade.
+Por exemplo, deixamos atributos private e disponibilizamos apenas os métodos necessários para alterar ou consultar esses dados.
+Assim, posso validar regras antes de mudar o estado, o que aumenta segurança e manutenibilidade.”
+
+“Herança é um mecanismo onde uma classe pode reutilizar atributos e comportamentos de outra.
+Ela permite especialização de classes e reduz duplicação de código.
+Em Java, usamos extends para herdar uma classe e super para acessar elementos da classe pai.”
+
+“Polimorfismo permite que o mesmo método tenha comportamentos diferentes dependendo do objeto que o chama.
+Em Java, isso aparece principalmente com sobrescrita (@Override) e com interfaces que permitem trocar implementações sem mudar o código cliente.”
+
+“Abstração é focar no que é essencial e esconder o que é irrelevante.
+Ela define o que um objeto deve fazer, não como ele faz.
+Em Java, aplicamos isso usando interfaces e classes abstratas.”
+
+Resumo :
+
+Encapsulamento: protege dados e controla acesso.
+private → só a própria classe pode acessar.
+
+protected → a própria classe e suas filhas (subclasses).
+
+public → qualquer lugar pode acessar.
+
+Herança: reaproveita código e cria especializações.
+
+Polimorfismo: métodos com comportamentos diferentes.
+
+Abstração: foco no essencial; define contratos (interfaces).
+
